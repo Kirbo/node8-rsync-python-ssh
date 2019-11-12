@@ -10,7 +10,8 @@ Node 8 container with rsync, python and ssh support
 ## Example how to use this image in GitLab CI/CD
 
 1. Create file `.gitlab-ci.yml`, e.g.:
-```
+
+```yml
 image: kirbownz/node8-rsync-python-ssh
 
 ###### STAGES #################################################################
@@ -75,6 +76,7 @@ deployment:
     - ssh-keyscan -t rsa ${demo_host} >> ~/.ssh/known_hosts
     - rsync build/ ${demo_user}@${demo_host}:${demo_path} --delete-after -r -v
 ```
+
 2. Add the variables above in GitLab -> Project -> Settings -> CI / CD -> Variables:
 
 | Type | Key | Value | Protected | Masked | Scope |
